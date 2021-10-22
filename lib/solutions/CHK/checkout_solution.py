@@ -16,6 +16,8 @@ def checkout(skus):
             n_c += 1
         elif(sku == "D"):
             n_d += 1
+        else:
+            return -1
     ret = 0
     ret += 130 * (n_a // 3)
     ret += 50 * (n_a % 3)
@@ -24,4 +26,5 @@ def checkout(skus):
     ret += 20 * n_c
     ret += 15 * n_d
     return ret
+
 

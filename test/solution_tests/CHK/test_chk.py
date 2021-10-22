@@ -9,3 +9,5 @@ class Test():
         assert checkout_solution.checkout("D") == 15
         assert checkout_solution.checkout("AB") == 80
         assert checkout_solution.checkout("AAA") == 130
+        assert checkout_solution.checkout("a") == -1
+
