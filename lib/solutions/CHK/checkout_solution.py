@@ -30,7 +30,7 @@
 | Z    | 21    | buy any 3 of (S,T,X,Y,Z) for 45 |
 +------+-------+---------------------------------+"""
 
-prices = [50, 30, 20, 15, 40, 10, 20, 10, 35, 60, 80, 90, 15, 40, 10, 50, 30, 50, 30, 20, 40, 50, 20, 90, 10, 50]
+prices = [50, 30, 20, 15, 40, 10, 20, 10, 35, 60, 70, 90, 15, 40, 10, 50, 30, 50, 20, 20, 40, 50, 20, 17, 20, 21]
 
 def get_c(char):
     return count[ord(char) - ord("A")]
@@ -84,7 +84,7 @@ def checkout(skus):
     ret += 45 * (get_c("H") // 5)
     set_c("H", get_c("H") % 5)
 
-    ret += 150 * (get_c("K") // 2)
+    ret += 120 * (get_c("K") // 2)
     set_c("K", get_c("K") % 2)
 
     ret += 200 * (get_c("P") // 5)
@@ -105,4 +105,5 @@ def checkout(skus):
         if count[i] > 0:
             ret += count[i] * prices[i]
     return ret
+
 
