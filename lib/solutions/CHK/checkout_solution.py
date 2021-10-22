@@ -49,26 +49,24 @@ def checkout(skus):
     ret = 0
 
 # weird cross-product offers
-    cget_c("B") -= get_c("E") // 2
+    sub_c("B", get_c("E") // 2)
 
 #normal multi-buys
     ret += 200 * (get_c("A") // 5)
-    ret += 130 * ((count[0] % 5) // 3)
-    ret += 50 * ((count[0] % 5) % 3)
+    sub_c("A", get_c("A") // 5)
+    ret += 130 * (get_c("A") // 3)
+    sub_c("A", get_c("A") // 3)
 
-    ret += 45 * (count[1] // 2)
-    ret += 30 * (count[1] % 2)
+    ret += 45 * (get_c("B") // 2)
+    sub_c("B", get_c("B") // 2)
 
-    ret += 20 * count[2]
-
-    ret += 15 * count[3]
-
-    ret += 20 * (count[5] // 3)
-    ret += 10 * (count[5] % 3)
+    ret += 20 * (get_c("F") // 3)
+    sub_c("F", get_c("F") // 3)
 
     for i in range(len(prices)):
         if count[i] > 0:
             ret += count[i] * prices[i]
     return ret
+
 
 
