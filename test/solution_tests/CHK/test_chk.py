@@ -13,3 +13,6 @@ class Test():
         assert checkout_solution.checkout("BEE") == 80
         assert checkout_solution.checkout("AAAAA") == 200
         assert checkout_solution.checkout("AAAAAA") == 250
+        assert checkout_solution.checkout("F") == 10
+        assert checkout_solution.checkout("FFF") == 20
+
