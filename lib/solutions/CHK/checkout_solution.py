@@ -57,7 +57,3 @@ def checkout(skus):
     ret += 20 * (count[5] // 3)
     ret += 10 * (count[5] % 3)
     return ret
-
-
-
-
