@@ -3,6 +3,4 @@
 # noinspection PyUnusedLocal
 # friend_name = unicode string
 def hello(friend_name):
-    return f"Hello, ${friend_name}!"
-print(hello("John"))
-
+    return f"Hello, {friend_name}!"
