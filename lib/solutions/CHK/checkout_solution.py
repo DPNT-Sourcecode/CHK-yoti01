@@ -102,11 +102,3 @@ def checkout(skus):
         if count[i] > 0:
             ret += count[i] * prices[i]
     return ret
-
-
-
-
-
-
-
-
