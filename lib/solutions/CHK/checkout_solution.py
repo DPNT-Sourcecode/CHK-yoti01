@@ -32,30 +32,32 @@
 def checkout(skus):
     count = [0] * 26
     for sku in skus:
-        if(sku >= "A" and sku <= "Z"):
-            count[sku - "A"] += 1
+        sku = ord(sku)
+        if(sku >= ord("A") and sku <= ord("Z")):
+            count[sku - ord("A")] += 1
         else:
             return -1
     ret = 0
-    ret += 40 * n_e
-    n_b -= n_e // 2
-    if n_b < 0:
-        n_b = 0
+    ret += 40 * count[4]
+    count[1] -= count[4] // 2
+    if count[1] < 0:
+        count[1] = 0
 
-    ret += 200 * (n_a // 5)
-    ret += 130 * ((n_a % 5) // 3)
-    ret += 50 * ((n_a % 5) % 3)
+    ret += 200 * (count[0] // 5)
+    ret += 130 * ((count[0] % 5) // 3)
+    ret += 50 * ((count[0] % 5) % 3)
 
-    ret += 45 * (n_b // 2)
-    ret += 30 * (n_b % 2)
+    ret += 45 * (count[1] // 2)
+    ret += 30 * (count[1] % 2)
 
-    ret += 20 * n_c
+    ret += 20 * count[2]
 
-    ret += 15 * n_d
+    ret += 15 * count[3]
 
-    ret += 20 * (n_f // 3)
-    ret += 10 * (n_f % 3)
+    ret += 20 * (count[5] // 3)
+    ret += 10 * (count[5] % 3)
     return ret
+
 
 
 
