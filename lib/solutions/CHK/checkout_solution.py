@@ -29,12 +29,13 @@ def checkout(skus):
 
     ret += 200 * (n_a // 5)
     ret += 130 * ((n_a % 5) // 3)
-    ret += 50 * (n_a % 3)
+    ret += 50 * ((n_a % 5) % 3)
     ret += 45 * (n_b // 2)
     ret += 30 * (n_b % 2)
     ret += 20 * n_c
     ret += 15 * n_d
     return ret
+
 
 
 
