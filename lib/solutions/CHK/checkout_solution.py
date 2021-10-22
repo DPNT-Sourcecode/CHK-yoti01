@@ -35,8 +35,3 @@ def checkout(skus):
     ret += 20 * n_c
     ret += 15 * n_d
     return ret
-
-
-
-
-
