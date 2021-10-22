@@ -57,10 +57,8 @@ def checkout(skus):
     sub_c("B", get_c("E") // 2)
 
 #normal multi-buys
-    print(get_c("A"))
     ret += 200 * (get_c("A") // 5)
     set_c("A", get_c("A") % 5)
-    print(get_c("A"))
     ret += 130 * (get_c("A") // 3)
     set_c("A", get_c("A") % 3)
 
@@ -74,6 +72,7 @@ def checkout(skus):
         if count[i] > 0:
             ret += count[i] * prices[i]
     return ret
+
 
 
 
