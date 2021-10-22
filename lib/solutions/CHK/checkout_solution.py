@@ -23,9 +23,10 @@ def checkout(skus):
             return -1
     ret = 0
     ret += 40 * n_e
-    n_a -= n_e // 2
-    if n_a < 0:
-        n_a = 0
+    n_b -= n_e // 2
+    if n_b < 0:
+        n_b = 0
+
     ret += 200 * (n_a // 5)
     ret += 130 * ((n_a % 5) // 3)
     ret += 50 * (n_a % 3)
@@ -34,6 +35,7 @@ def checkout(skus):
     ret += 20 * n_c
     ret += 15 * n_d
     return ret
+
 
 
 

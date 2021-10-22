@@ -10,4 +10,7 @@ class Test():
         assert checkout_solution.checkout("AB") == 80
         assert checkout_solution.checkout("AAA") == 130
         assert checkout_solution.checkout("a") == -1
+        assert checkout_solution.checkout("BEE") == 80
+        assert checkout_solution.checkout("AAAAAA") == 250
+
 
