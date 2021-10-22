@@ -27,23 +27,29 @@
 | Z    | 50    |                        |
 +------+-------+------------------------+"""
 
+prices = [50, 30, 20, 15, 40, 10, 20, 10, 35, 60, 80, 90, 15, 40, 10, 50, 30, 50, 30, 20, 40, 50, 20, 90, 10, 500]
+count = [0] * len(prices)
+
+def get_c(char):
+    return count[ord(char) - ord("A")]
+
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-    count = [0] * 26
     for sku in skus:
         sku = ord(sku)
         if(sku >= ord("A") and sku <= ord("Z")):
             count[sku - ord("A")] += 1
         else:
             return -1
-    ret = 0
-    ret += 40 * count[4]
-    count[1] -= count[4] // 2
-    if count[1] < 0:
-        count[1] = 0
 
-    ret += 200 * (count[0] // 5)
+    ret = 0
+
+# weird cross-product offers
+    count[get_idx("B")] -= count[get_idx("E")] // 2
+
+#normal multi-buys
+    ret += 200 * (count[get] // 5)
     ret += 130 * ((count[0] % 5) // 3)
     ret += 50 * ((count[0] % 5) % 3)
 
@@ -56,4 +62,9 @@ def checkout(skus):
 
     ret += 20 * (count[5] // 3)
     ret += 10 * (count[5] % 3)
+
+    for i in range(len(prices)):
+        if count[i] > 0:
+            ret += count[i] * prices[i]
     return ret
+
