@@ -33,6 +33,9 @@ count = [0] * len(prices)
 def get_c(char):
     return count[ord(char) - ord("A")]
 
+def set_c(char, new_c):
+    count[ord(char) - ord("A")] = new_c
+
 def sub_c(char, sub):
     count[ord(char) - ord("A")] -= sub
 
@@ -55,20 +58,21 @@ def checkout(skus):
 
 #normal multi-buys
     ret += 200 * (get_c("A") // 5)
-    sub_c("A", get_c("A") // 5)
+    set_c("A", get_c("A") % 5)
     ret += 130 * (get_c("A") // 3)
-    sub_c("A", get_c("A") // 3)
+    set_c("A", get_c("A") % 3)
 
     ret += 45 * (get_c("B") // 2)
-    sub_c("B", get_c("B") // 2)
+    set_c("B", get_c("B") % 2)
 
     ret += 20 * (get_c("F") // 3)
-    sub_c("F", get_c("F") // 3)
+    set_c("F", get_c("F") % 3)
 
     for i in range(len(prices)):
         if count[i] > 0:
             ret += count[i] * prices[i]
     return ret
+
 
 
 
