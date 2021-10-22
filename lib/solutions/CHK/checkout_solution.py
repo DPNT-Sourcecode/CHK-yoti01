@@ -33,6 +33,9 @@ count = [0] * len(prices)
 def get_c(char):
     return count[ord(char) - ord("A")]
 
+def sub_c(char, sub):
+    count[ord(char) - ord("A")] -= sub
+
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
@@ -46,10 +49,10 @@ def checkout(skus):
     ret = 0
 
 # weird cross-product offers
-    count[get_idx("B")] -= count[get_idx("E")] // 2
+    cget_c("B") -= get_c("E") // 2
 
 #normal multi-buys
-    ret += 200 * (count[get] // 5)
+    ret += 200 * (get_c("A") // 5)
     ret += 130 * ((count[0] % 5) // 3)
     ret += 50 * ((count[0] % 5) % 3)
 
@@ -67,4 +70,5 @@ def checkout(skus):
         if count[i] > 0:
             ret += count[i] * prices[i]
     return ret
+
 
