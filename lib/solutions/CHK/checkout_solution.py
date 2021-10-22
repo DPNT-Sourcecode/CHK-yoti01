@@ -23,3 +23,5 @@ def checkout(skus):
     ret += 30 * (n_b % 2)
     ret += 20 * n_c
     ret += 15 * n_d
+    return ret
+
