@@ -17,4 +17,6 @@ class Test():
         assert checkout_solution.checkout("FFF") == 20
         assert checkout_solution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ") == 965
         assert checkout_solution.checkout("EE") == 80
+        assert checkout_solution.checkout("RRR") == 150
+
 

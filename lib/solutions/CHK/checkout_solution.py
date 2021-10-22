@@ -58,11 +58,11 @@ def checkout(skus):
     if (count[1] < 0):
         count[1] = 0
     sub_c("M", get_c("N") // 3)
-    if (count[14] < 0):
-        count[14] = 0
+    if (count[12] < 0):
+        count[12] = 0
     sub_c("Q", get_c("R") // 3)
-    if (count[18] < 0):
-        count[18] = 0
+    if (count[16] < 0):
+        count[16] = 0
 
 #normal multi-buys
     ret += 200 * (get_c("A") // 5)
@@ -102,6 +102,7 @@ def checkout(skus):
         if count[i] > 0:
             ret += count[i] * prices[i]
     return ret
+
 
 
 
