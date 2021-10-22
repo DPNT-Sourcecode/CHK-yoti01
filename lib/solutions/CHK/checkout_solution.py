@@ -8,6 +8,7 @@ def checkout(skus):
     n_c = 0
     n_d = 0
     n_e = 0
+    n_f = 0
     for sku in skus:
         if(sku == "A"):
             n_a += 1
@@ -19,6 +20,8 @@ def checkout(skus):
             n_d += 1
         elif(sku == "E"):
             n_e += 1
+        elif(sku == "F"):
+            n_f += 1
         else:
             return -1
     ret = 0
@@ -30,8 +33,15 @@ def checkout(skus):
     ret += 200 * (n_a // 5)
     ret += 130 * ((n_a % 5) // 3)
     ret += 50 * ((n_a % 5) % 3)
+    
     ret += 45 * (n_b // 2)
     ret += 30 * (n_b % 2)
+
     ret += 20 * n_c
+
     ret += 15 * n_d
+
+    ret += 20 * (n_f // 3)
+    ret += 10 * (n_f % 3)
     return ret
+
