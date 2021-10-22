@@ -1,4 +1,4 @@
-from solutions.HLO import hello_solution
+from solutions.CHK import hello_solution
 
 
 class Test():
