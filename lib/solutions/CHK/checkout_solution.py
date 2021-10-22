@@ -89,9 +89,12 @@ def checkout(skus):
 
     ret += 130 * (get_c("V") // 3)
     set_c("V", get_c("V") % 3)
+    ret += 90 * (get_c("V") // 2)
+    set_c("V", get_c("V") % 2)
 
     for i in range(len(prices)):
         if count[i] > 0:
             ret += count[i] * prices[i]
     return ret
+
 
