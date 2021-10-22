@@ -15,6 +15,8 @@ class Test():
         assert checkout_solution.checkout("AAAAAA") == 250
         assert checkout_solution.checkout("F") == 10
         assert checkout_solution.checkout("FFF") == 20
-        assert checkout_solution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ") == 965
+#        assert checkout_solution.checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZ") == 965
         assert checkout_solution.checkout("EE") == 80
         assert checkout_solution.checkout("RRR") == 150
+        assert checkout_solution.checkout("STXYZ") == 45 + 17 + 20
+

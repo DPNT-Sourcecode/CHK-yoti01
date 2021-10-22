@@ -67,6 +67,26 @@ def checkout(skus):
     if (count[16] < 0):
         count[16] = 0
 
+# group buys
+    n_in_group = get_c("S") + get_c("T") + get_c("X") + get_c("Y") + get_c("Z")
+    if (n_in_group >= 3):
+        n_groups = n_in_group // 3
+        ret += 45 * n_groups
+        items_to_remove = 3 * n_groups
+        while (items_to_remove > 0):
+            if (get_c("Z") > 0):
+                sub_c("Z", 1)
+            elif (get_c("S") > 0):
+                sub_c("S", 1)   
+            elif (get_c("T") > 0):
+                sub_c("T", 1)
+            elif (get_c("Y") > 0):
+                sub_c("Y", 1)
+            else:
+                sub_c("X", 1)
+
+            items_to_remove -= 1
+
 #normal multi-buys
     ret += 200 * (get_c("A") // 5)
     set_c("A", get_c("A") % 5)
@@ -105,5 +125,6 @@ def checkout(skus):
         if count[i] > 0:
             ret += count[i] * prices[i]
     return ret
+
 
 
