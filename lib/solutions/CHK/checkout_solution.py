@@ -39,6 +39,8 @@ def sub_c(char, sub):
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
+    count = [0] * len(prices)
+
     for sku in skus:
         sku = ord(sku)
         if(sku >= ord("A") and sku <= ord("Z")):
@@ -67,6 +69,7 @@ def checkout(skus):
         if count[i] > 0:
             ret += count[i] * prices[i]
     return ret
+
 
 
 
